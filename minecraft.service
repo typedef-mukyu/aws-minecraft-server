@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=mcsvc
 WorkingDirectory=/opt/minecraft/
-ExecStart=bash -c "java -Xmx1536M -Xms1536M -jar server.jar nogui <> /opt/minecraft/serverinput"
+ExecStart=bash -c "java -Xmx1024M -Xms1024M -jar server.jar nogui <> /opt/minecraft/serverinput"
 ExecStop=bash -c "echo \"/stop\" > /opt/minecraft/serverinput && watch -n 1 -e \"ps | grep java\" > /dev/null"
 [Install]
 WantedBy=multi-user.target
